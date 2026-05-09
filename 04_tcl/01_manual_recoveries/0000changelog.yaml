@@ -1,1 +1,17 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-manual-recoveries
+      author: Amaya
+      runInTransaction: false
+      labels: HU-03
+      comment: execute security manual recoveries
+      changes:
+        - sqlFile:
+            path: 04_tcl/01_manual_recoveries/002-security-domain-manual-recoveries.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/04_tcl/01_manual_recoveries/002-security-domain-manual-recoveries.sql
+            stripComments: false
+            splitStatements: false

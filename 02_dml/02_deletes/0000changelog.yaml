@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-deletes
+      author: Amaya
+      labels: HU-03
+      comment: soft delete inactive security reference data
+      changes:
+        - sqlFile:
+            path: 02_dml/02_deletes/002-security-domain-deletes.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/02_dml/02_deletes/002-security-domain-deletes.sql
+            stripComments: false
+            splitStatements: false

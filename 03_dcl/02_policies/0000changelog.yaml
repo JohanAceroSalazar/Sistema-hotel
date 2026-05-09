@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-policies
+      author: Amaya
+      labels: HU-03
+      comment: create security row level policies
+      changes:
+        - sqlFile:
+            path: 03_dcl/02_policies/002-security-domain-policies.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/03_dcl/02_policies/002-security-domain-policies.sql
+            stripComments: false
+            splitStatements: false

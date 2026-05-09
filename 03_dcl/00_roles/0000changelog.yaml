@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-roles
+      author: Amaya
+      labels: HU-03
+      comment: create security database roles
+      changes:
+        - sqlFile:
+            path: 03_dcl/00_roles/002-security-domain-roles.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/03_dcl/00_roles/002-security-domain-roles.sql
+            stripComments: false
+            splitStatements: false
