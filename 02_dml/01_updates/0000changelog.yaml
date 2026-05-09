@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-updates
+      author: Amaya
+      labels: HU-03
+      comment: update security domain reference data
+      changes:
+        - sqlFile:
+            path: 02_dml/01_updates/002-security-domain-updates.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/02_dml/01_updates/002-security-domain-updates.sql
+            stripComments: false
+            splitStatements: false

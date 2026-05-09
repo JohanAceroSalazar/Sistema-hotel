@@ -1,0 +1,29 @@
+DROP POLICY IF EXISTS pol_module_view_security_write ON hotel.module_view;
+DROP POLICY IF EXISTS pol_role_permission_security_write ON hotel.role_permission;
+DROP POLICY IF EXISTS pol_user_role_security_write ON hotel.user_role;
+DROP POLICY IF EXISTS pol_app_user_security_write ON hotel.app_user;
+DROP POLICY IF EXISTS pol_app_view_security_write ON hotel.app_view;
+DROP POLICY IF EXISTS pol_module_security_write ON hotel.module;
+DROP POLICY IF EXISTS pol_permission_security_write ON hotel.permission;
+DROP POLICY IF EXISTS pol_app_role_security_write ON hotel.app_role;
+DROP POLICY IF EXISTS pol_person_security_write ON hotel.person;
+
+DROP POLICY IF EXISTS pol_module_view_security_read ON hotel.module_view;
+DROP POLICY IF EXISTS pol_role_permission_security_read ON hotel.role_permission;
+DROP POLICY IF EXISTS pol_user_role_security_read ON hotel.user_role;
+DROP POLICY IF EXISTS pol_app_user_security_read ON hotel.app_user;
+DROP POLICY IF EXISTS pol_app_view_security_read ON hotel.app_view;
+DROP POLICY IF EXISTS pol_module_security_read ON hotel.module;
+DROP POLICY IF EXISTS pol_permission_security_read ON hotel.permission;
+DROP POLICY IF EXISTS pol_app_role_security_read ON hotel.app_role;
+DROP POLICY IF EXISTS pol_person_security_read ON hotel.person;
+
+ALTER TABLE hotel.module_view DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.role_permission DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.user_role DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.app_user DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.app_view DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.module DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.permission DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.app_role DISABLE ROW LEVEL SECURITY;
+ALTER TABLE hotel.person DISABLE ROW LEVEL SECURITY;
