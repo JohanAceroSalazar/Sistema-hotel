@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-upserts
+      author: Amaya
+      labels: HU-03
+      comment: upsert security domain reference data
+      changes:
+        - sqlFile:
+            path: 02_dml/03_upserts/002-security-domain-upserts.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/02_dml/03_upserts/002-security-domain-upserts.sql
+            stripComments: false
+            splitStatements: false

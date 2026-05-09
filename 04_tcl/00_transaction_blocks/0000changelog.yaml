@@ -1,1 +1,17 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-transaction-blocks
+      author: Amaya
+      runInTransaction: false
+      labels: HU-03
+      comment: execute security transaction blocks
+      changes:
+        - sqlFile:
+            path: 04_tcl/00_transaction_blocks/002-security-domain-transaction-blocks.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/04_tcl/00_transaction_blocks/002-security-domain-transaction-blocks.sql
+            stripComments: false
+            splitStatements: false

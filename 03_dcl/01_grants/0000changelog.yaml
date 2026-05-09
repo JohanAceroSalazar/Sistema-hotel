@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-grants
+      author: Amaya
+      labels: HU-03
+      comment: grant security database privileges
+      changes:
+        - sqlFile:
+            path: 03_dcl/01_grants/002-security-domain-grants.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/03_dcl/01_grants/002-security-domain-grants.sql
+            stripComments: false
+            splitStatements: false

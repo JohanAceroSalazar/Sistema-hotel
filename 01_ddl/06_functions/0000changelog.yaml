@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 002-security-domain-functions
+      author: Amaya
+      labels: HU-02
+      comment: create security domain functions
+      changes:
+        - sqlFile:
+            path: 01_ddl/06_functions/002-security-domain-functions.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/01_ddl/06_functions/002-security-domain-functions.sql
+            stripComments: false
+            splitStatements: false

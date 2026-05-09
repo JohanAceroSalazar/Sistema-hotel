@@ -1,1 +1,16 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: 001-hotel-schema
+      author: joseamaya009
+      labels: HU-02
+      comment: create hotel schema
+      changes:
+        - sqlFile:
+            path: 01_ddl/01_schemas/001-hotel-schema.sql
+            stripComments: false
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/01_ddl/01_schemas/001-hotel-schema.sql
+            stripComments: false
+            splitStatements: false
