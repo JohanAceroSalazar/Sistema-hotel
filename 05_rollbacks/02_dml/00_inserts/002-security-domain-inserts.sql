@@ -1,0 +1,24 @@
+SET search_path TO hotel;
+
+DELETE FROM module_view
+WHERE module_id IN (SELECT id FROM module WHERE name = 'SECURITY');
+
+DELETE FROM role_permission
+WHERE role_id IN (SELECT id FROM app_role WHERE name = 'ADMINISTRATOR')
+  AND permission_id IN (
+    SELECT id
+    FROM permission
+    WHERE name IN ('MANAGE_USERS', 'MANAGE_ROLES', 'MANAGE_PERMISSIONS', 'VIEW_SECURITY_DASHBOARD')
+  );
+
+DELETE FROM app_view
+WHERE module_id IN (SELECT id FROM module WHERE name = 'SECURITY');
+
+DELETE FROM permission
+WHERE name IN ('MANAGE_USERS', 'MANAGE_ROLES', 'MANAGE_PERMISSIONS', 'VIEW_SECURITY_DASHBOARD');
+
+DELETE FROM app_role
+WHERE name IN ('ADMINISTRATOR', 'RECEPTIONIST', 'MAINTENANCE', 'INVENTORY');
+
+DELETE FROM module
+WHERE name = 'SECURITY';
